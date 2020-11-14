@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
 <mapper namespace="com.baicells.camera.mapper.StaffMapper">
+    <resultMap id="BaseResultMap" type="com.baicells.camera.Entity.Staff">
+        <result column="staffId" jdbcType="VARCHAR" property="staffId" />
+        <result column="staffName" jdbcType="VARCHAR" property="staffName" />
+        <result column="staffPhoto" jdbcType="VARCHAR" property="staffPhoto" />
+        <result column="create_time" jdbcType="VARCHAR" property="create_time" />
+    </resultMap>
+
+    <insert id="insertStaff" parameterType="com.baicells.camera.Entity.Staff"
+            keyProperty="staffId" useGeneratedKeys="true">
+        INSERT INTO staff
+        (
+            staffId,staffName,staffPhoto
+        )
+        VALUES (
+        #{staffId},
+        #{staffName, jdbcType=VARCHAR},
+        #{staffPhoto, jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <select id="ListStaff" resultType="com.baicells.camera.vo.staffVO">
+        SELECT *
+        FROM staff
+    </select>
+
+    <delete id="deleteStaffByID" parameterType="String">
+        delete from staff where staffId=#{staffId}
+    </delete>
 </mapper>

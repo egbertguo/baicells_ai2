@@ -6,5 +6,7 @@ import com.baicells.camera.dto.StaffInfoDTO;
 public interface StaffService {
 
     RtnResult CreateStaff(StaffInfoDTO dto);
+    RtnResult ListStaff();
+    RtnResult DeleteStaff(StaffInfoDTO dto);
 
 }

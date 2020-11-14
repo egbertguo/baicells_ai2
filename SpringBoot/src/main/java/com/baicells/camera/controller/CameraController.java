@@ -24,4 +24,14 @@ public class CameraController {
         //return RtnResult.ok("123");
         return staffService.CreateStaff(dto);
     }
+
+    @PostMapping("listStaff")
+    public RtnResult listStaff() {
+        return staffService.ListStaff();
+    }
+
+    @PostMapping("deleteStaff")
+    public RtnResult deleteStaff(@RequestBody StaffInfoDTO dto) {
+        return staffService.DeleteStaff(dto);
+    }
 }

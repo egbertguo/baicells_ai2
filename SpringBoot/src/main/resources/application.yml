@@ -1,7 +1,7 @@
 spring:
   datasource:
     name: baicells
-    url: jdbc:mysql://192.168.127.128:3307/baicells?useUnicode=true&useSSL=false #url
+    url: jdbc:mysql://172.17.0.3:3306/baicells?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true #url
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
